@@ -28,15 +28,17 @@ function watch() {
         style
     );
     // JS
-    gulp.watch("./templates/" + vars.folder + "/src/**/*.js").on(
+    gulp.watch(["./templates/" + vars.folder + "/src/js/*.js", "./libs/js/fontawesome-5/custom.js"]).on(
         "change",
         script
     );
+    // LIBS
+    
     // DEST
     gulp.watch([
         "./templates/" + vars.folder + "/dest/**/*.html",
         "./templates/" + vars.folder + "/dest/**/*.css",
-        "./templates/" + vars.folder + "/dest/**/*.js"
+        "./templates/" + vars.folder + "/dest/**/*.js",
     ]).on("change", browserSync.reload);
 }
 
